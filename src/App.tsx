@@ -20,8 +20,8 @@ const App: React.FC = () => {
         <div className="line"></div>
         <GithubCorner
           href="https://github.com/mat-sz/jumpcall-web"
-          octoColor="#111"
-          bannerColor="#fc03a1"
+          octoColor="#ffffff"
+          bannerColor="#000000"
         />
         <Header />
         <Status />
