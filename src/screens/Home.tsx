@@ -1,34 +1,18 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-
-import { StateType } from '../reducers';
-import { nameCharacterSet, nameLength } from '../config';
+import React from 'react';
 
 const Home: React.FC = () => {
-  const networkName = useSelector((state: StateType) => state.networkName);
-  const connected = useSelector((state: StateType) => state.connected);
-  const clientId = useSelector((state: StateType) => state.clientId);
-
-  const history = useHistory();
-
-  useEffect(() => {
-    const currentNetworkName =
-      networkName ||
-      new Array(nameLength)
-        .fill('')
-        .map(() =>
-          nameCharacterSet.charAt(
-            Math.floor(Math.random() * nameCharacterSet.length)
-          )
-        )
-        .join('');
-    if (connected && clientId) {
-      history.replace('/' + currentNetworkName);
-    }
-  }, [connected, networkName, history, clientId]);
-
-  return <section className="center">Loading...</section>;
+  return (
+    <section className="center">
+      <div className="new subsection">
+        <label>
+          Username:
+          <input type="text" />
+        </label>
+        <button>Start a new meeting</button>
+      </div>
+      <div>...or use an invite link to join an existing meeting.</div>
+    </section>
+  );
 };
 
 export default Home;

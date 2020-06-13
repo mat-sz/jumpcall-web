@@ -42,6 +42,23 @@ a {
   }
 }
 
+label {
+  text-align: left;
+  font-size: 14px;
+  display: block;
+
+  input {
+    display: block;
+  }
+}
+
+.new {
+  button {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 .queue {
   list-style-type: none;
   margin: 0;
@@ -294,7 +311,9 @@ nav {
 }
 
 .center {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .subsection {
